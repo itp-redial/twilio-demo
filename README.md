@@ -2,8 +2,11 @@ This Sinatra app is a simple demo of how to send and receive SMS with Twilio fro
 
 The home page will show SMS that's been sent to your twilio number.  You should change the phone number in views/main.erb.
 IMPORTANT:
+
 Go to https://www.twilio.com/user/account/phone-numbers/incoming and click on your phone number.
+
 Change the SMS Request URL to "http://YOURSERVER.COM/YOUR_SINATRA_APP_LOCATION/receive_sms"
+
 For example, on the Redial server it may look like this:
 ```
 http://asterisk.itp-redial.com/~ck123/sinatra/twilio-demo/receive_sms
@@ -11,7 +14,9 @@ http://asterisk.itp-redial.com/~ck123/sinatra/twilio-demo/receive_sms
 "/send_sms" will allow you to send an SMS to a remote number.  The password is in app.rb, and you should probably change it.
 
 Here's how to get this running on ITP's server, or the Redial Asterisk server:
+
 (replace NETID with your NYU Net ID)
+
 change directories to the sinatra directory
 ```
 cd sinatra/
@@ -25,14 +30,18 @@ change directories to the newly created twilio-demo folder
 cd twilio-demo
 ```  
 add your MySQL credentials to mysql_conf.yml
+
 your username and database are your net ID.
+
 your password is in your home folder in a file called sqlpwd
 ```
 cat ~/sqlpwd
 nano mysql_conf.yml
 ```
 add your twilio credentials to twilio_conf.yml
+
 Your account SID and Auth Token are at the top of the page at https://www.twilio.com/user/account
+
 Your phone number is at https://www.twilio.com/user/account/phone-numbers/incoming
 ```
 nano twilio_conf.yml
