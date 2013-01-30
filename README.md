@@ -11,36 +11,36 @@ http://asterisk.itp-redial.com/~ck123/sinatra/twilio-demo/receive_sms
 
 Here's how to get this running on ITP's server, or the Redial Asterisk server:
 (replace NETID with your NYU Net ID)
-# change directories to the sinatra directory
-cd sinatra/
+change directories to the sinatra directory
+  cd sinatra/
+  
+get this project from github
+  git clone https://github.com/itp-redial/twilio-demo.git
+  
+change directories to the newly created twilio-demo folder
+  cd twilio-demo
+  
+add your MySQL credentials to mysql_conf.yml
+your username and database are your net ID.
+your password is in your home folder in a file called sqlpwd
+  cat ~/sqlpwd
+  nano mysql_conf.yml
+  
+add your twilio credentials to twilio_conf.yml
+Your account SID and Auth Token are at the top of the page at https://www.twilio.com/user/account
+Your phone number is at https://www.twilio.com/user/account/phone-numbers/incoming
+  nano twilio_conf.yml
+  
+link the sinatra app to your public html folder
+  ln -s /home/NET-ID/sinatra/twilio-demo/ /home/NET-ID/public_html/sinatra/twilio-demo
 
-# get this project from github
-git clone https://github.com/itp-redial/twilio-demo.git
-
-#change directories to the newly created twilio-demo folder
-cd twilio-demo
-
-#add your MySQL credentials to mysql_conf.yml
-#your username and database are your net ID.
-#your password is in your home folder in a file called sqlpwd
-cat ~/sqlpwd
-nano mysql_conf.yml
-
-#add your twilio credentials to twilio_conf.yml
-#Your account SID and Auth Token are at the top of the page at https://www.twilio.com/user/account
-#Your phone number is at https://www.twilio.com/user/account/phone-numbers/incoming
-nano twilio_conf.yml
-
-#link the sinatra app to your public html folder
-ln -s /home/NET-ID/sinatra/twilio-demo/ /home/NET-ID/public_html/sinatra/twilio-demo
-
-#create a file called .htacces and add the following information, changing the NET-ID in PassengetAppRoot to your net id.
-nano .htaccess
-#add this info below...
-PassengerEnabled on
-RackBaseURI /sinatra
-PassengerAppRoot /home/NET-ID/sinatra/twilio-demo
-RackEnv development
+create a file called .htacces and add the following information, changing the NET-ID in PassengetAppRoot to your net id.
+  nano .htaccess
+add this info below...
+  PassengerEnabled on
+  RackBaseURI /sinatra
+  PassengerAppRoot /home/NET-ID/sinatra/twilio-demo
+  RackEnv development
 
 #move the Gemfile to that Passenger will ignore it.
 mv Gemfile ignore_Gemfile
