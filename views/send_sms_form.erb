@@ -1,0 +1,17 @@
+<html>
+<head>
+
+</head>
+<body>
+    <h1>
+      <%= @message unless @message.nil? %>
+    </h1>
+    <h5>Send SMS</h5>
+    <form name="sms_form" action="send_sms" method="post">
+      Phone number: <input type="text" name="phone_number"> <br/>
+      Message: <input type="text" name="message"> <br/>
+      Password: <input type="password" name="password"> <br/>
+      <input type="submit" value="Send SMS">
+    </form>
+</body>
+</html>

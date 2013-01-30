@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Twilio SMS Demo</h2>
+<h3>Send SMS to 1 (917) 791-3179</h3>
+<div>Text <strong>"lotto"</strong>  to get lottery numbers.</div>
+<div>Text <strong>"cat facts"</strong> get facts about cats.</div>
+<div>Text any other message to post it to this page!</div>
+<table border="1">
+  <tr>
+    <th>Message</th>
+    <th>Date Received</th>
+  </tr>
+  <% @sms_messages.each do |sms| %>
+    <tr>
+        <td style="min-width: 200px;"><%= sms.body %> </td>
+        <td><%= sms.created_at.to_s %></td>
+    </tr>
+  <% end %>
+</table>
+</body>
+</html>

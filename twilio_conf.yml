@@ -1,0 +1,5 @@
+#Twilio credentials
+---
+account_sid: "YOUR TWILIO ACCT SID"
+auth_token: "YOUR TWILIO AUTH TOKEN"
+from_number: "+19170000000"

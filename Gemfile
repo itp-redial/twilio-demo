@@ -1,0 +1,6 @@
+source 'http://rubygems.org'
+gem 'sinatra'
+gem 'thin'
+gem 'twilio-ruby'
+gem 'data_mapper'
+gem 'dm-mysql-adapter'
