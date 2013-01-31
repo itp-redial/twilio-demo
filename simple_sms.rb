@@ -6,7 +6,7 @@ require 'yaml'
 @to_number= '1646xxxxxxx'  #replace with actual phone number
 @body = "This is the text body" #replace with your text message
 
-conf=YAML.load_file('twilio_conf_internal.yml')
+conf=YAML.load_file('twilio_conf.yml')
 @account_sid = conf['account_sid']
 @auth_token = conf['auth_token']
 
