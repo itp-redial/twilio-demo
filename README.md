@@ -1,7 +1,14 @@
 This Sinatra app is a simple demo of how to send and receive SMS with Twilio from a web app.
 
+The app does 4 things:
+- You can send an SMS to a remote number at /send_sms
+- It will receive SMS sent to a Twilio phone number.
+- If you send "lotto" then the app will return random lottery numbers.
+- If you send "cat facts" then the app will return trivia about cats.
+- Any other SMS will get stored in a MySQL database with Datamapper, and displayed on the home page.
+
 The home page will show SMS that's been sent to your twilio number.  You should change the phone number in views/main.erb.  
-IMPORTANT:  
+Be sure to set up your twilio account.
 - Go to https://www.twilio.com/user/account/phone-numbers/incoming and click on your phone number.
 - Change the SMS Request URL to "http://YOURSERVER.COM/YOUR_SINATRA_APP_LOCATION/receive_sms"
 - For example, on the Redial server it may look like this:
