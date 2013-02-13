@@ -69,7 +69,7 @@ RackBaseURI /sinatra
 PassengerAppRoot /home/NET-ID/sinatra/twilio-demo
 RackEnv development
 ```
-- rename the Gemfile to that Passenger will ignore it.
+- rename the Gemfile so that Passenger will ignore it.
 
 ```
 mv Gemfile ignore_Gemfile
